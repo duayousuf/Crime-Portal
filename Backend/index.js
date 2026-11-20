@@ -39,6 +39,5 @@ app.use((err, req, res, next) => {
     res.status(isUploadError ? 400 : 500).json({ err: isUploadError ? err.message : 'Internal Server Error' });
 });
 
-app.listen(port, () => {
-    console.log(`Project is Running on http://localhost:${port}`)
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
